@@ -13,6 +13,7 @@ routes.post('/sessions', SessionController.create)
 routes.get('/ongs', OngController.index);
 
 /*
+* Using Celebrate
 * Query
 * Route
 * Body
