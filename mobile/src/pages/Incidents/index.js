@@ -3,7 +3,6 @@ import {Feather} from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import {View, FlatList, Image, Text, TouchableOpacity} from 'react-native';
 
-
 import logoImg from '../../assets/logo.png';
 
 import styles from './styles';
@@ -36,28 +35,29 @@ export default function Incidents() {
                 data={[1, 2, 3]}
                 renderItem={() => (
                     <View style={styles.incident}>
-                    <Text style={styles.incidentProperty}>ONG:</Text>
-                    <Text style={styles.incidentValue}>APAD</Text>
+                        
+                        <Text style={styles.incidentProperty}>ONG:</Text>
+                        <Text style={styles.incidentValue}>APAD</Text>
 
-                    <Text style={styles.incidentProperty}>CASO:</Text>
-                    <Text style={styles.incidentValue}>Cadelinha atropelada</Text>
+                        <Text style={styles.incidentProperty}>CASO:</Text>
+                        <Text style={styles.incidentValue}>Cadelinha atropelada</Text>
 
-                    <Text style={styles.incidentProperty}>VALOR:</Text>
-                    <Text style={styles.incidentValue}>R$ 120,00</Text>
-                    <TouchableOpacity 
-                        style={styles.detailButton}
-                        onPress={navigateToDetail}
-                        > 
-                        <Text style={styles.detailButtonText}>
-                            Ver mais detalhes
-                        </Text>
-                        <Feather name="arrow-right" size={16} color="#E02041">
+                        <Text style={styles.incidentProperty}>VALOR:</Text>
+                        <Text style={styles.incidentValue}>R$ 120,00</Text>
 
-                        </Feather>
-                    </TouchableOpacity>
-                </View>
-                )}
-                />
+                        <TouchableOpacity 
+                            style={styles.detailButton}
+                            onPress={navigateToDetail}
+                            > 
+                            <Text style={styles.detailButtonText}>
+                                Ver mais detalhes
+                            </Text>
+                            <Feather name="arrow-right" size={16} color="#E02041">
+
+                            </Feather>
+                        </TouchableOpacity>
+                    </View>
+                )}/>
     </View>
     );
 }
