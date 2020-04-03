@@ -18,7 +18,7 @@ routes.get('/ongs', OngController.index);
 * Body
 */
 
-// Exemple body
+// Example BODY
 routes.post('/ongs', celebrate({
     [Segments.BODY]: Joi.object().keys({
         name: Joi.string().required(),
@@ -29,10 +29,17 @@ routes.post('/ongs', celebrate({
     })
 }), OngController.create);
 
-routes.get('/profile', ProfileController.index);
+// Example HEADERS
+routes.get('/profile', celebrate({
+    [Segments.HEADERS]: Joi.object({
+        authorization: Joi.string().required(),
+    }).unknown(),
+}), ProfileController.index);
 
 routes.get('/incidents', IncidentController.index);
 routes.post('/incidents', IncidentController.create);
+
+
 routes.delete('/incidents/:id', IncidentController.delete);
 
 module.exports = routes;
